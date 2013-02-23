@@ -12,6 +12,7 @@ namespace P04_Galicic_Tests
 		{
 			Wumpus test = new Wumpus();
 
+
 			Assert.AreEqual(true,test.truth());
 		}
 	}
