@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P04_Galicic", "P04_Galicic\P04_Galicic.csproj", "{AE981AC7-89A3-433D-8D80-F1348C9F6B07}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P04_Galicic_Tests", "P04_Galicic_Tests\P04_Galicic_Tests.csproj", "{A45B1F54-380F-4EDD-8C5F-2C2819240BCE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{AE981AC7-89A3-433D-8D80-F1348C9F6B07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE981AC7-89A3-433D-8D80-F1348C9F6B07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE981AC7-89A3-433D-8D80-F1348C9F6B07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A45B1F54-380F-4EDD-8C5F-2C2819240BCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A45B1F54-380F-4EDD-8C5F-2C2819240BCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A45B1F54-380F-4EDD-8C5F-2C2819240BCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A45B1F54-380F-4EDD-8C5F-2C2819240BCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
