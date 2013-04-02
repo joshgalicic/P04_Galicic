@@ -17,6 +17,7 @@ namespace P04_Galicic
 	
 		public void move(Room room)
 		{
+
 			currentRoom = room;
 		}
 	}
