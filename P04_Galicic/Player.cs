@@ -11,6 +11,7 @@ namespace P04_Galicic
 		public Player()
 		{
 			currentRoom = Room.roomList[0];
+
 		}
 
 		public Room currentRoom;
