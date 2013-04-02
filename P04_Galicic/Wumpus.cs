@@ -8,7 +8,6 @@ namespace P04_Galicic
 {
 	public class Wumpus
 	{
-		public Stack<int> doorList = new Stack<int>();
 
 		public void gameInitialize()
 		{
@@ -19,11 +18,11 @@ namespace P04_Galicic
 			// pop doors off of stack for room2
 		}
 
-		public void randomizeDoors()
+		public void randomizeDoors() // Initialize stack of unique doors
 		{
 			for (int i = 0; i < 64; i++)
 			{
-				// Initialize stack of unique doors
+				
 			}
 		}
 

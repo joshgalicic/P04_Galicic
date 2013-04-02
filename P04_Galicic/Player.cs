@@ -10,30 +10,14 @@ namespace P04_Galicic
 	{
 		public Player()
 		{
-			currentRoom = 1;
+			currentRoom = Room.roomList[0];
 		}
 
-		private int currentRoom;
-
-		private void moveNorth()
+		public Room currentRoom;
+	
+		public void move(Room room)
 		{
-			
-		}
-
-		private void moveEast()
-		{
-			
-
-		}
-
-		private void moveSouth()
-		{
-
-		}
-
-		private void moveWest()
-		{
-
+			currentRoom = room;
 		}
 	}
 
