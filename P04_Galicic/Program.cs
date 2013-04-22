@@ -14,8 +14,8 @@ namespace P04_Galicic
 		[STAThread]
 		static void Main()
 		{
-			
-
+			game.setup();
+	
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new Form1());

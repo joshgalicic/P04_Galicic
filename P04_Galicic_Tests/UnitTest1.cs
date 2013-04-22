@@ -6,19 +6,7 @@ namespace P04_Galicic_Tests
 {
 	[TestClass]
 	public class UnitTest1
-	{
-		[TestMethod]
-		public void roomHasFourNullDoorsAtStart()
-		{
-			Room room = new Room();
-			Assert.AreEqual(-1, room.door1);
-			Assert.AreEqual(-1, room.door2);
-			Assert.AreEqual(-1, room.door3);
-			Assert.AreEqual(-1, room.door4);
-
-			//Assert.AreEqual(true,test.truth());
-		}
-		
+	{		
 		[TestMethod]
 		public void playerStartsinRoomZero()
 		{
@@ -43,18 +31,52 @@ namespace P04_Galicic_Tests
 		[TestMethod]
 		public void roomsAllLinkTogether()
 		{
-			Room.setupRooms();
-			Room.scrambleLinks();
+			game.setup();
+
+			for (int i=0; i < Room.roomList.Count; i++)
+			{
+				Assert.AreEqual(Room.lookupRoom(i).doorNorth, Room.lookupRoom(i - game.width).id);	
+				Assert.AreEqual(Room.lookupRoom(i).doorSouth, Room.lookupRoom(i + game.width).id);
+				//Assert.AreEqual(Room.lookupRoom(i).door2, Room.lookupRoom(i + 1).id);
+				//Assert.AreEqual(Room.lookupRoom(i).door4, Room.lookupRoom(i - 1).id);
+			}
+		}
+
+		[TestMethod]
+		public void wumpusInitializesToRandomRoom()
+		{
+			game.setup();
+			int sum = 0;
+			foreach (Room room in Room.roomList)
+			{
+				sum += room.hasWumpus;
+			}
+			Assert.AreEqual(1,sum);
+		}
+
+		[TestMethod]
+		public void wumpusMovesToAdjacentRoom()
+		{
+			game.setup();
+			Wumpus wumpus = new Wumpus();
+			int oldRoomID = -1;
+			int newRoomID = -1;
+			foreach (Room room in Room.roomList)
+			{
+				if (room.hasWumpus == 1)
+					oldRoomID = room.id;
+			}
+
+			wumpus.moveRandom();
+			wumpus.moveRandom();
 
 			foreach (Room room in Room.roomList)
 			{
-				Assert.AreNotEqual(room.door1, -1);
-				
-				Assert.AreNotEqual(room.door2, -1);
-				Assert.AreNotEqual(room.door3, -1);
-				Assert.AreNotEqual(room.door4, -1);
-
+				if (room.hasWumpus == 1)
+					newRoomID = room.id;
 			}
+			Assert.AreNotEqual(oldRoomID, newRoomID);
+
 		}
 	}
 }
